@@ -18,9 +18,10 @@ export const Cards = (props) => {
       )} 
     else {
       return (
-        <section className={`title ${props.type} clicked`}
-          onMouseEnter={() => setTitleState(true) }
-          onMouseLeave={() => setTitleState(false)}
+        <section className={`title ${props.type} clicked ${descriptionState ? "hide" : ""}`}
+        style={titleState ? {height: "100%"} : {}}
+        onMouseEnter={() => setTitleState(true)}
+        onMouseLeave={() => setTitleState(false)}
         >
           <h1>{props.title}</h1> 
       </section>
@@ -41,7 +42,8 @@ export const Cards = (props) => {
       } 
       else {
         return (
-          <div className={`${props.type}-description description clicked`} 
+          <div className={`${props.type}-description description clicked ${titleState ? "hide" : ""}`} 
+          style={descriptionState ? {height: "100%"} : {}}
             onMouseEnter={() => setDescriptionState(true)}
             onMouseLeave={() => setDescriptionState(false)}
           >
