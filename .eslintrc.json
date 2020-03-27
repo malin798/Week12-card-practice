@@ -21,9 +21,6 @@
       "modules": true
     }
   },
-  "plugins": [
-    "react-hooks"
-  ],
   "rules": {
     "arrow-body-style": "off",
     "class-methods-use-this": "off",
@@ -40,7 +37,6 @@
     ],
     "consistent-return": "off",
     "curly": "error",
-    "eol-last": "off",
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
     "import/no-unresolved": "off",
@@ -80,7 +76,6 @@
       }
     ],
     "prefer-template": "error",
-    "react/destructuring-assignment": "off",
     "react/forbid-prop-types": "off",
     "react/jsx-closing-bracket-location": [
       "error",
@@ -100,9 +95,6 @@
     "react/jsx-no-bind": "error",
     "react/jsx-uses-react": "warn",
     "react/jsx-wrap-multilines": "off",
-    "react/jsx-one-expression-per-line": "off",
-    "react/jsx-props-no-spreading": "off",
-    "react/no-array-index-key": "off",
     "react/no-danger": "off",
     "react/no-did-mount-set-state": "error",
     "react/no-did-update-set-state": "error",
@@ -114,12 +106,14 @@
       }
     ],
     "react/no-string-refs": "error",
+    "react/prefer-stateless-function": "off", // TODO change back to "warn" soon, once we go through stateless functions
     "react/prop-types": "off",
     "react/require-extension": "off",
     "react/sort-comp": "off",
     "react/jsx-indent": "off",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "semi": "off"
+    "semi": [
+      "error",
+      "never"
+    ]
   }
 }
