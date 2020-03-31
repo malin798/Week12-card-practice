@@ -15,6 +15,8 @@ p {
   font-style: italic;
 }
 
+/* elements styling */
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -67,16 +69,6 @@ code {
   border-radius: 8px 8px 0 0;
 }
 
-.title.clicked:hover {
-  height: 100%;
-  z-index: 1;
-}
-
-.title.clicked:hover + .description {
-  height: 0%;
-  z-index: 0;
-}
-
 .emoji {
   font-size: 50px;
 }
@@ -99,10 +91,6 @@ code {
   border-radius: 0 0 8px 8px;
 }
 
-.description.clicked:hover {
-  height: 100%;
-}
-
 button {
   width: 311px;
   height: 50px;
@@ -123,52 +111,19 @@ button {
   transition: 1s;
 }
 
-.hide {
-  height: 0% !important;
-  transition: all 1s linear;
+/* hover effect */
+
+.title.clicked:hover {
+  height: 100%;
+  z-index: 1;
 }
 
-.lemon {
-  background-color: #8CFFBA;
-  color: #000000;
+.title.clicked:hover + .description {
+  height: 0%;
+  z-index: 0;
 }
 
-.lemon-description {
-  background: #CFFFE2;
-  color: #000000;
+.description.clicked:hover {
+  height: 100%;
 }
 
-.lemon button {
-  background: #FCED84;
-  color: #166F39;
-}
-
-.rocket {
-  background: #A6CFE2;
-  color: #0B0C11;
-}
-
-.rocket-description {
-  background: #C2DCE9;
-  color: #0B0C11;
-}
-
-.rocket button {
-  background: #0B0C11;
-  color: #FFD600;
-}
-
-.doggy {
-  color: #502F7E;
-  background: #EEB200;
-}
-
-.doggy-description {
-  background: #FFE086;
-  color: #502F7E;
-}
-
-.doggy button {
-  background: #FFFFFF;
-  color: #502F7E;
-}

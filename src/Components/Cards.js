@@ -1,70 +1,53 @@
 import React, { useState } from "react";
-import { Transition } from 'react-transition-group';
+import { ClickedCard } from "./ClickedCard";
+// import { Button } from "./Button"
 
 export const Cards = (props) => {
 
   const [state, setState] = useState(true);
-    
-  const Title = (props) => {
-  
-    {if (state === true) {
-      return (
-
-      <section className={`title ${props.type}`}>
-        <h1>{props.title}</h1> 
-        <div className="emoji">{props.image}</div>
-      </section>
-      )} 
-    else {
-      return (
-        <section className={`title ${props.type} clicked `}>
-          <h1>{props.title}</h1> 
+     
+    {if (state) {
+      return ( 
+      
+      <section className="card">
+        <section className={`title ${props.type}`}
+        style={{backgroundColor: props.titleBackgroundColor}}>
+          <h1
+          style={{color: props.titleTextColor}}>{props.title}</h1> 
+          <div className="emoji">{props.image}</div>
         </section>
+
+        <section 
+        className={`${props.type}-description description`}
+        style={{backgroundColor: props.descriptionBackgroundColor}}
+        >
+          <p 
+          className="italic"
+          style={{color: props.descriptionTextColor}}
+          >
+          {props.description}
+          </p>
+
+          <button 
+            className={`${props.type} button`}
+            style={{background: props.buttonBackgroundColor, color: props.buttonTextColor}}
+            onClick={event => setState(false)}
+            >
+              {props.button}
+            </button>
+
+        </section>
+      </section>
+
       )
     }
-  }}
 
-    const Description = (props) => {
-
-      {if (state) {
+    else {
       return (
-        <div className={`${props.type}-description description`}>
-          <p className="italic">{props.description}</p>
-          <Button {...props} />
-        </div>
+
+        <ClickedCard {...props}/>
+
       )
-      } 
-      else {
-        return (
-          <div className={`${props.type}-description description clicked `}>
-            <p style={{fontSize: 80}}>{props.image}</p>
-          </div>
-        )
-      }
-    }}
-  
-    const Button = (props) => {
-        return (
-          <button className={`${props.type} button`}
-          onClick={event => setState(false)}
-          >
-            {props.button}
-          </button>
-        )
-      }
-     
-  return (
-  
-  <article className="card">
-
-    <Title {...props}/>
-    <Description {...props}/>
-
-  </article>
-
-
-  )
+    }
+  }
 }
-
-  
-
