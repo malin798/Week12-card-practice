@@ -4,8 +4,6 @@ import { Transition } from 'react-transition-group';
 export const Cards = (props) => {
 
   const [state, setState] = useState(true);
-  const [titleState, setTitleState] = useState(false);
-  const [descriptionState, setDescriptionState] = useState(false);
     
   const Title = (props) => {
   
@@ -19,13 +17,9 @@ export const Cards = (props) => {
       )} 
     else {
       return (
-        <section className={`title ${props.type} clicked ${descriptionState ? "hide" : ""}`}
-        style={titleState ? {height: "100%"} : {}}
-        onMouseEnter={() => setTitleState(true)}
-        onMouseLeave={() => setTitleState(false)}
-        >
+        <section className={`title ${props.type} clicked `}>
           <h1>{props.title}</h1> 
-      </section>
+        </section>
       )
     }
   }}
@@ -36,18 +30,13 @@ export const Cards = (props) => {
       return (
         <div className={`${props.type}-description description`}>
           <p className="italic">{props.description}</p>
-
           <Button {...props} />
         </div>
       )
       } 
       else {
         return (
-          <div className={`${props.type}-description description clicked ${titleState ? "hide" : ""}`} 
-          style={descriptionState ? {height: "100%"} : {}}
-            onMouseEnter={() => setDescriptionState(true)}
-            onMouseLeave={() => setDescriptionState(false)}
-          >
+          <div className={`${props.type}-description description clicked `}>
             <p style={{fontSize: 80}}>{props.image}</p>
           </div>
         )
