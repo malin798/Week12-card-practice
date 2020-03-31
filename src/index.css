@@ -116,6 +116,7 @@ button {
 .title.clicked:hover {
   height: 100%;
   z-index: 1;
+  border-radius: 8px;
 }
 
 .title.clicked:hover + .description {
@@ -125,5 +126,6 @@ button {
 
 .description.clicked:hover {
   height: 100%;
+  border-radius: 8px;
 }
 

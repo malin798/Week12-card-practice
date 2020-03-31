@@ -10,13 +10,15 @@ export const Cards = (props) => {
       return ( 
       
       <section className="card">
+        {/* title section  */}
         <section className={`title ${props.type}`}
         style={{backgroundColor: props.titleBackgroundColor}}>
           <h1
           style={{color: props.titleTextColor}}>{props.title}</h1> 
           <div className="emoji">{props.image}</div>
         </section>
-
+        
+        {/* description section */}
         <section 
         className={`${props.type}-description description`}
         style={{backgroundColor: props.descriptionBackgroundColor}}
@@ -28,13 +30,14 @@ export const Cards = (props) => {
           {props.description}
           </p>
 
+        {/* button section */}
           <button 
-            className={`${props.type} button`}
-            style={{background: props.buttonBackgroundColor, color: props.buttonTextColor}}
-            onClick={event => setState(false)}
-            >
-              {props.button}
-            </button>
+          className={`${props.type} button`}
+          style={{background: props.buttonBackgroundColor, color: props.buttonTextColor}}
+          onClick={event => setState(false)}
+          >
+            {props.button}
+          </button>
 
         </section>
       </section>
