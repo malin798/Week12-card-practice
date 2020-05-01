@@ -1,4 +1,4 @@
-import React , { useState } from "react";
+import React from "react";
 import { Cards } from "./Components/Cards";
 
 export const App = () => {

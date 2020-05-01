@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { ClickedCard } from "./ClickedCard";
-// import { Button } from "./Button"
 
 export const Cards = (props) => {
 
@@ -10,7 +9,7 @@ export const Cards = (props) => {
       return ( 
       
       <section className="card">
-        {/* title section  */}
+
         <section className={`title ${props.type}`}
         style={{backgroundColor: props.titleBackgroundColor}}>
           <h1
@@ -18,7 +17,6 @@ export const Cards = (props) => {
           <div className="emoji">{props.image}</div>
         </section>
         
-        {/* description section */}
         <section 
         className={`${props.type}-description description`}
         style={{backgroundColor: props.descriptionBackgroundColor}}
@@ -30,7 +28,6 @@ export const Cards = (props) => {
           {props.description}
           </p>
 
-        {/* button section */}
           <button 
           className={`${props.type} button`}
           style={{background: props.buttonBackgroundColor, color: props.buttonTextColor}}
